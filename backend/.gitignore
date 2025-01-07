@@ -1,2 +1,29 @@
+# Node.js
 node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment Variables
 .env
+
+# Dependency directories
+bower_components/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+
+# Build directories
+dist/
+build/
+
+# Misc
+*.tgz
+*.swp
