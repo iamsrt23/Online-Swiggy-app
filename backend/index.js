@@ -3,7 +3,7 @@ const dotEnv = require("dotenv")
 const mongoose = require("mongoose")
 const vendorRoutes = require('./routes/vendorRoutes')
 const bodyParser = require('body-parser')
-const firmRoutes = require('./routes/firmRoutes')
+const firmRoutes = require('./routes/firmRoutes.js')
 
 const app = express()
 const PORT = 4000;
