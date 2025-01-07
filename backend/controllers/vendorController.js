@@ -51,7 +51,7 @@ const vendorLogin = async(req,res)=>{
 
         // Jwt Token Creation
         // we assign jwt based on vendor id ,secretkey,time to expire for token
-        const token = jwt.sign({vendorId:vendor._id},secretKey,{expiresIn: "24h"})
+        const token = jwt.sign({vendorId:vendor._id},secretKey,{expiresIn: "1h"})
 
 
 
@@ -66,4 +66,29 @@ const vendorLogin = async(req,res)=>{
     }
 }
 
-module.exports = {vendorRegister,vendorLogin}
+const getAllVendors = async(req,res)=>{
+    try{
+        const vendors = await Vendor.find().populate('firm')
+        res.json({vendors})
+    }catch(error){
+        console.error(eror)
+        res.status(500).json({error:"Internal Server Error"})
+    }
+}
+
+
+const getVendorById = async(req,res)=>{
+    const vendorId = req.params.apple;
+    try {
+        const vendor = await Vendor.findById(vendorId).populate('firm')
+        if(!vendor){
+            res.status(404).json({error:"Vendor not found"})
+        }
+        res.status(200).json({vendor})
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({error:"Internal server Error"})
+    }
+}
+
+module.exports = {vendorRegister,vendorLogin,getAllVendors,getVendorById}
