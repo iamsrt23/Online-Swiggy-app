@@ -60,16 +60,23 @@ const addFirm = async(req, res) => {
     }
 }
 
-const getAllVendors = async(req,res)=>{
-    try{
-        const vendors = await Vendor.find().populate('firm')
-        res.json({vendors})
-    }catch(error){
-        console.error(eror)
-        res.status(500).json({error:"Internal Server Error"})
+const deleteFirmById = async(req,res) =>{
+try{
+    const firmId = req.params.firmId;
+    const deletedFirm = await Firm.findByIdAndDelete(firmId)
+    if(!deleteFirm){
+        return res.status(404).json({error:"No Firm Found"})
     }
+
+    res.status(200).json({message:"Firm Deleted Successfully"})
+}catch(error){
+    console.error(erro)
+    res.status(500).json({error:"Internal server Error"})
+}
 }
 
 
 
-module.exports = { addFirm: [upload.single('image'), addFirm] ,getAllVendors}
+
+
+module.exports = { addFirm: [upload.single('image'), addFirm],deleteFirmById }
