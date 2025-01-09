@@ -29,8 +29,8 @@ const vendorRegister = async(req,res)=>{
         res.status(201).json({message: "Vendor registered Successfully"})
         console.log('Registered')
 
-    }catch{error}{
-        console.error(error);
+    }catch(error){
+        console.error("Registration Failed",error);
         res.status(500).json({error:"Internal Server Error"})
     }
 
