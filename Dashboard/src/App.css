@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", serif;
+}
+
+.navSection {
+  border: 1px solid red;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background-color: orangered;
+  align-items: center;
+  color: white;
+  padding: 0 20px;
+  font-size: large;
+  cursor: pointer;
+}
+
+.sideBarSection {
+  background-color: lightgray;
+  width: 100%;
+  max-width: 15%;
+  height: 95vh;
+  padding-top: 10px;
+}
+
+.sideBarSection ul li {
+  list-style: none;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: medium;
+  cursor: pointer;
+}
+.collectionSection {
+  display: flex;
+}
+
+/* Login Section */
+
+.loginSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Register Section */
+.registerSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.authForm label {
+  width: 100%;
+  max-width: 55%;
+  font-weight: 400;
+}
+.authForm {
+  width: 100%;
+  max-width: 50%;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-top: -200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.authForm input {
+  width: 100%;
+  max-width: 55%;
+  height: 1.5rem;
+  border-radius: 5px;
+}
+
+/* Frim Section Add firm */
+.firmSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.tableForm {
+  width: 100%;
+  max-width: 50%;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tableForm input {
+  width: 100%;
+  max-width: 85%;
+  height: 40px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.tableForm label {
+  width: 100%;
+  max-width: 85%;
+  font-weight: 600;
+}
+
+/* Check Box inputs */
+
+.checkInp {
+  width: 100%;
+  max-width: 85%;
+  display: flex;
+}
+.checkInp label {
+  width: 20%;
+}
+.inputsContainer {
+  width: 100%;
+  max-width: 85%;
+  display: flex;
+}
+
+.checkBoxContainer {
+  width: 100%;
+  max-width: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.checkBoxContainer label {
+  margin-top: 18px;
+  width: 80%;
+}
+.checkBoxContainer input {
+  margin-left: -20px;
+}
+
+.regBoxContainer label {
+  font-size: small;
+}
