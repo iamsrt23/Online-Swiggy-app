@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 
 import API_PATH from '../../data/apiPath.js';
 
-const Register = () => {
+const Register = ({showLoginHandler}) => {
   const [username,setUsername] = useState("")
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
@@ -19,11 +19,17 @@ const Register = () => {
         },
         body: JSON.stringify({ username, email, password }),
       });
+      // we have to refresh the Register form after submit
      
       const data = await response.json()
       if(response.ok){
         console.log(data)
+        setUsername("");
+        setEmail("")
+        setPassword("")
         alert("Vendor registered Successfully")
+        // after Register successfully we have to call login page so below fucntion calls the login page
+        showLoginHandler()
       }
     
 

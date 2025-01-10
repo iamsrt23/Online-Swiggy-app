@@ -14,13 +14,8 @@ const PORT = process.env.PORT || 4000;
 // Connecting to Database
 dotEnv.config();
 // CORS setup
-const corsOptions = {
-    // Replace with your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
-  };
-  app.use(cors(corsOptions));
-
+// Update your CORS middleware
+app.use(cors())
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>console.log("MongoDB connected suceessfully"))
     .catch((error)=>console.log(error))
