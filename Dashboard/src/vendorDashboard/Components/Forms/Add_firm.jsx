@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import API_PATH from '../../data/apiPath'
-import { send } from 'vite'
+
 
 const Add_firm = () => {
     const [firmName,setFirmName] = useState("")
