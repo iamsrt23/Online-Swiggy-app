@@ -12,7 +12,8 @@ body {
   height: 80px;
   display: flex;
   justify-content: space-between;
-  background-color: orangered;
+  /* background-color: orangered; */
+  background-color: #f46036;
   align-items: center;
   color: white;
   padding: 0 20px;
@@ -21,11 +22,13 @@ body {
 }
 
 .sideBarSection {
-  background-color: lightgray;
+  /* background-color: lightgray; */
+  background-color: #2e294e;
   width: 100%;
   max-width: 15%;
   height: 95vh;
   padding-top: 10px;
+  color: white;
 }
 
 .sideBarSection ul li {
@@ -101,6 +104,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 8px 10px 15px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 8px 10px 15px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 8px 10px 15px 0px rgba(0, 0, 0, 0.75);
 }
 
 .tableForm input {
@@ -183,4 +189,18 @@ body {
 
 .errorSection {
   font-size: xx-large;
+}
+
+h3 {
+  color: #d7263d;
+}
+
+/* button submit */
+.btn-submit button {
+  background-color: blue;
+  border-radius: 5px;
+  color: white;
+  width: 7rem;
+  padding: 10px 0;
+  margin-bottom: 20px;
 }

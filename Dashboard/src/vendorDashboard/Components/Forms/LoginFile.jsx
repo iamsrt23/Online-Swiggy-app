@@ -61,7 +61,7 @@ const LoginFile = ({showWelcomeHandler}) => {
             <label>password</label>
             <input type="password" name="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Enter Your password"/><br />
 
-            <div className="btnSubmit">
+            <div className="btn-submit">
             <button type='submit'>submit</button>
 
             </div>

@@ -92,7 +92,7 @@ const Add_Product = () => {
     <div className="firmSection">
         
     <form className="tableForm" onSubmit={handleAddProduct}>
-    <h2>Add Product</h2>
+    <h3>Add Product</h3>
 
     <label>Product Name</label>
     <input type="text" placeholder='Enter Firm Name' value={productName} onChange={(e)=>setProductName(e.target.value)} />
