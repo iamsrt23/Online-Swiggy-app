@@ -65,6 +65,12 @@ const Add_Product = () => {
         if(response.ok){
           alert("Product Added Sucessfully")
         }
+        setProductName("")
+        setPrice("")
+        setCategory([])
+        setBestSeller(false)
+        setFile(null)
+        setDescription("")
 
 
  

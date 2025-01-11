@@ -152,3 +152,35 @@ body {
 .regBoxContainer label {
   font-size: small;
 }
+
+/* Products Table */
+.product-table {
+  width: 75vw;
+  max-width: 80vw;
+  border-collapse: collapse;
+  margin-top: 50px;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid gray;
+  padding: 8px;
+}
+
+.product-table th {
+  text-align: left;
+  background-color: gray;
+}
+
+.errorSection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorSection {
+  font-size: xx-large;
+}

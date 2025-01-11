@@ -66,13 +66,13 @@ const deleteFirmById = async(req,res) =>{
 try{
     const firmId = req.params.firmId;
     const deletedFirm = await Firm.findByIdAndDelete(firmId)
-    if(!deleteFirm){
+    if(!deletedFirm){
         return res.status(404).json({error:"No Firm Found"})
     }
 
     res.status(200).json({message:"Firm Deleted Successfully"})
 }catch(error){
-    console.error(erro)
+    console.error(error)
     res.status(500).json({error:"Internal server Error"})
 }
 }
