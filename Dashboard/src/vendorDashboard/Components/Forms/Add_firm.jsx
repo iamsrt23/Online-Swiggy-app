@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import API_PATH from '../../data/apiPath'
-import { send } from 'vite'
+
 
 const Add_firm = () => {
     const [firmName,setFirmName] = useState("")
@@ -29,7 +29,7 @@ const Add_firm = () => {
         }
     }
     const handleImageUpload = (event)=>{
-        const selectedImage = event.target.file
+        const selectedImage = event.target.files[0]
         setFile(selectedImage)
     }
 
@@ -48,6 +48,7 @@ const Add_firm = () => {
                 formData.append('firmName',firmName)
                 formData.append('area',area)
                 formData.append('offer',offer)
+                formData.append('image',file)
                 // Append Each Value to the Form
                 category.forEach((value)=>{
                     formData.append('category',value)
@@ -77,7 +78,20 @@ const Add_firm = () => {
                 setFile(null)
                 alert('Firm Added Successfully')
 
+            }else if(data.message === "vendor can have only one firm"){
+                alert("Firm Exists .Only One firm can be added")
+
+            }else{
+                alert("Failed to Ad Firm")
             }
+
+            // we got firmId from backend we have to store the firmId in localstorage
+           
+            const firmId = data.firmId
+            console.log("This is FirmID",data.firmId)
+
+            localStorage.setItem('firmId',firmId)
+            
 
               
 
@@ -111,7 +125,7 @@ const Add_firm = () => {
     <div className="firmSection">
         
         <form className="tableForm" onSubmit={handleFirmSubmit}>
-        <h2>Add Firm</h2>
+        <h3>Add Firm</h3>
     
             <label>Firm Name</label>
             <input type="text" name='firmName' value={firmName} onChange={(e)=>setFirmName(e.target.value)} />

@@ -2,6 +2,7 @@ import React from 'react'
 import LandingPage from './vendorDashboard/pages/LandingPage'
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
+import NotFound from './vendorDashboard/Components/NotFound.jsx'
 
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
     <div>
       <Routes>
         <Route path='/' element={<LandingPage />}/>
+        <Route path='/*' element={<NotFound />} />
       </Routes>
       
       

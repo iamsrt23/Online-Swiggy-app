@@ -26,9 +26,9 @@ const addFirm = async(req, res) => {
             res.status(404).json({ message: "Vendor not found" })
         }
 
-        // if (vendor.firm.length > 0) {
-        //     return res.status(400).json({ message: "vendor can have only one firm" });
-        // }
+        if (vendor.firm.length > 0) {
+            return res.status(400).json({ message: "vendor can have only one firm" });
+        }
 
         const firm = new Firm({
             firmName,
@@ -41,13 +41,15 @@ const addFirm = async(req, res) => {
         })
 
         const savedFirm = await firm.save();
-
+        
+        //  To send the firm id to front end
         const firmId = savedFirm._id
         const vendorFirmName = savedFirm.firmName
 
         vendor.firm.push(savedFirm)
 
         await vendor.save()
+        
 
 
 
@@ -64,13 +66,13 @@ const deleteFirmById = async(req,res) =>{
 try{
     const firmId = req.params.firmId;
     const deletedFirm = await Firm.findByIdAndDelete(firmId)
-    if(!deleteFirm){
+    if(!deletedFirm){
         return res.status(404).json({error:"No Firm Found"})
     }
 
     res.status(200).json({message:"Firm Deleted Successfully"})
 }catch(error){
-    console.error(erro)
+    console.error(error)
     res.status(500).json({error:"Internal server Error"})
 }
 }
