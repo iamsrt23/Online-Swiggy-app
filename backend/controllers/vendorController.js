@@ -66,6 +66,7 @@ const getAllVendors = async(req, res) => {
 }
 
 
+<<<<<<< HEAD
 const getVendorById = async(req, res) => {
     const vendorId = req.params.apple;
 
@@ -82,6 +83,34 @@ const getVendorById = async(req, res) => {
         res.status(500).json({ error: "Internal server error" });
     }
 }
+=======
+const getVendorById = async (req, res) => {
+    const vendorId = req.params.apple; // Ensure this matches your route parameter
+
+    try {
+        const vendor = await Vendor.findById(vendorId).populate('firm');
+
+        if (!vendor) {
+            return res.status(404).json({ error: "Vendor not found" });
+        }
+
+        // Safely access firm details
+        const firm = vendor.firm;
+        if (!firm || firm.length === 0) {
+            return res.status(404).json({ error: "Firm details not found for this vendor" });
+        }
+
+        const vendorFirmId = firm[0]._id; // Assuming `firm` is an array
+        console.log(vendorFirmId);
+
+        res.status(200).json({ vendorId, vendorFirmId, vendor });
+    } catch (error) {
+        console.error("Error fetching vendor:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+};
+
+>>>>>>> f271bde (Add .gitignore)
 
 
 module.exports = { vendorRegister, vendorLogin, getAllVendors, getVendorById }
