@@ -1,0 +1,66 @@
+pipeline{
+    agent any
+    tools{
+
+    }
+    environment{
+
+    }
+    stages{
+        stage('Cleaning WorkSpace'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('Checkout from Git'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('SonarQube Analysis'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('QualityCheck'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('Owasp Dependency Check'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('Trivy File Scan'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('Docker Image Build'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('ECR Image Pushing'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('Trivy Image Scan'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('Update Deployment File'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('k8s-manifest-file/Backend'){
+            steps{
+                cleanWs()
+            }
+        }
+    }
+}
